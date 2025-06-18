@@ -1,12 +1,12 @@
 {
-  "name": "Ubuntu 16.04 Dev Environment",
-  "image": "ubuntu:16.04",
+  "name": "Ubuntu 16.04 via Docker",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-20.04",
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
       "installOhMyZsh": true
     }
   },
-  "postCreateCommand": "apt update && apt install -y build-essential git curl wget vim sudo",
-  "remoteUser": "root"
+  "postCreateCommand": "docker pull ubuntu:16.04 && echo 'Ubuntu 16.04 Docker image ready!'"
 }
